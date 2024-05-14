@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hoạt động kinh doanh - Nhà sách Tiến Thọ</title>
-    <link rel="icon" type="image/x-icon" href="../img/favicon2.png" />
+    <title>Liên hệ - Nhà sách Tiến Thọ</title>
+    <link rel="icon" type="image/x-icon" href="../../img/favicon2.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <link rel="stylesheet" href="./sale-activity.css" />
+    <link rel="stylesheet" href="./contact.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -33,21 +33,21 @@
         </div>
       </div>
     </div>
-
-    <!-- toolbar -->
-    <div class="header-container">
+ 
+        <!-- toolbar -->
+        <div class="header-container">
       <div>
-        <img class="logo" src="../img/logo.png" alt="logo" />
+        <img class="logo" src="../../img/logo.png" alt="logo" />
       </div>
 
       <div class="search">
         <input type="search" placeholder="Tìm kiếm... " />
         <!-- <AiOutlineSearch class="fa-search" /> -->
-        <i class="fas fa-search"></i> 
+        <i class="fas fa-search"></i>
       </div>
 
       <div class="hotline">
-        <img class="img-hotline" src="../img/hotline.webp" alt="hotline" />
+        <img class="img-hotline" src="../../img/hotline.webp" alt="hotline" />
         <div class="hotline-phoneNumber">
           <p class="hotline-text">Hotline:</p>
           <a class="hotline-tel" href="tel:0987654321">0987654321</a>
@@ -55,26 +55,27 @@
       </div>
 
       <div class="shopping-cart">
-        <a class="shopping-cart-container" href="#">
+        <a class="shopping-cart-container" href="../shoppingCart">
           <!-- <FaShoppingCart class="fa-shopping-cart" /> -->
-           <i class="fas fa-shopping-cart"></i> 
+          <i class="fas fa-shopping-cart"></i>
           Giỏ hàng 
         </a>
-        <div class="notification">
+        <!-- <div class="notification">
           <div class="notification-message">
             Giỏ hàng của bạn đang trống
             <a class="red" href="../index.html">Tiếp tục mua hàng</a>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
+
 
     <!-- navigation -->
     <div class="nav-header">
       <div class="nav-container">
         <li class="nav-left">
-          <a href="" class="nav-left-container">
-            <p class=" fs-16">
+          <a href="../collections" class="nav-left-container">
+            <p class="fs-16">
               <i class="fas fa-bars icon menu-icon"></i>
               <!-- <HiMenu class="icon menu-icon" /> -->
               Danh mục sản phẩm
@@ -84,26 +85,24 @@
           </a>
         </li>
         <li class="nav-right">
-          <a href="../index.html" class="nav-right-container">
+          <a href="../../index.php" class="nav-right-container">
             <p class="nav-text">Trang chủ</p>
           </a>
         </li>
         <li class="nav-right">
           <div href="#" class="nav-right-container">
             <div class="nav-text">
-              <div>
-              Giới thiệu
-              </div>
+              <div>Giới thiệu</div>
               <i class="fas fa-chevron-down icon down-icon"></i>
             </div>
             <div class="sub-nav">
               <div class="introduce">
-                <a href="../introduction/" class="introduce-item">
+                <a href="../introduction" class="introduce-item">
                   <div class="sub-nav-content">Giới thiệu chung</div>
                 </a>
               </div>
               <div class="introduce">
-                <a href="index.html" class="introduce-item">
+                <a href="../saleActivity" class="introduce-item">
                   <div class="sub-nav-content">Hoạt động kinh doanh</div>
                 </a>
               </div>
@@ -111,49 +110,115 @@
           </div>
         </li>
         <li class="nav-right">
-          <a href="../contact/index.html" class="nav-right-container">
+          <a href="../contact" class="nav-right-container">
             <p class="nav-text">Liên hệ</p>
           </a>
         </li>
       </div>
     </div>
 
-    <!-- sale activity -->
-    <div class="main-sale-activity">
-      <div class="sale-activity">
-       <div class="sale-activity-header">
-         Hoạt động kinh doanh
-       </div>
-       <div class="sale-activity-container">
-         <p>
-           <span class="cl-red">- Xuất bản:</span> Trung bình mỗi năm, công
-           ty CP Văn hóa và giáo dục Tân Việt xuất bản từ 200 – 300 đầu sách các
-           loại thuộc các lĩnh vực: thiếu nhi, giáo dục, văn hóa, lịch sử, khoa
-           học, xã hội và các loại sách tham khảo, sách nghiên cứu. Đặc biệt,
-           trong lĩnh vực sách thiếu nhi, Tân Việt hiện là một trong những doanh
-           nghiệp xuất bản hang đầu lĩnh vực sách này tại Việt Nam. Nhiều nhân
-           vật truyện tranh nổi tiếng thế giới đã được Tân Việt mua bản quyền và
-           giới thiệu đến độc giả nhỏ tuổi tại Việt Nam như: Angry Bird, búp bê
-           Barbie, Thomas and Friends, nàng tiên Winx, Winnie the Pooh, Tinker
-           Bell, My Little Pony,….
-           <br />
-         </p>
-         <p>
-           <span class="cl-red">- In ấn:</span> Để đảm bảo cho sản phẩm in
-           được chất lượng và đạt thẩm mỹ cao, công ty CP Văn hóa và giáo dục Tân
-           Việt hiện đang hợp tác và là khách hàng chiến lược của các nhà in
-           chuyên nghiệp.
-           <br />
-         </p>
-         <p>
-           <span class="cl-red">- Phát hành: </span> Trong những năm qua,
-           công ty CP Văn hóa và giáo dục Tân Việt luôn chú trọng đến phát triển
-           hệ thống bán lẻ và bán buôn trong toàn quốc. Đặc biệt là hệ thống bán
-           lẻ được triển khai hàng năm. Kế hoạch phát triển cửa hàng bán lẻ của
-           Tân Việt đến hết năm 2030 là 30 nhà sách trong toàn quốc.
-         </p>
-       </div>
-     </div>
+
+    <!-- main contact -->
+    <div class="main-contact">
+      <div class="contact">
+        <div class="contact-header">Liên hệ</div>
+        <div class="contact-body">
+          <div class="contact-branch">
+            <p>
+              Hệ thống nhà sách Tiến Thọ:
+              <br />
+              <br />
+              - Số 697 Giải Phóng - Hoàng Mai - Hà Nội. ĐT: 0243.6272120
+              <br />
+              <br />
+              - Số 7&17, phố Đinh Lễ, Hà Nội: 0243.5746020
+              <br />
+              <br />
+              - Phố sách 19/12 - Hai Bà Trưng - Hà Nội: 0775032000
+              <br />
+              <br />
+              - Hầm B1 - Tòa nhà Artemis - Số 3 Lê Trọng Tấn - Thanh Xuân - Hà
+              Nội
+              <br />
+              <br />
+              - Tầng 2 Siêu thị VinMart 163 Đại La - Hà Nội: 0243.6272114
+              <br />
+              <br />
+              - Hầm B1 - TTTM Mega Mall Times City - Hà Nội: 0243.2002444
+              <br />
+              <br />
+              - Tầng 3 - TTTM Vincom Phan Văn Trị - Quận Gò Vấp - TP. Hồ Chí
+              Minh: 02836368470
+              <br />
+              <br />
+              - Tầng 3 Vincom Thái Nguyên - Thái Nguyên: 0208.3939008
+              <br />
+              <br />
+              - Tầng 1 TTTM BigC Hạ Long - Khu Đô thị cột 5 - P.Hồng Hải - TP Hạ
+              Long - Quảng Ninh: 0203.3831225
+              <br />
+              <br />
+              - Số 350/31 Đường Lê Đức Thọ, Phường 6 - Quận Gò Vấp - TP. Hồ Chí
+              Minh: 0961654298
+              <br />
+              <br />
+              ----
+              <br />
+              Và hệ thống Nhà sách Tân Việt tại các Big C khu vực Miền Bắc và
+              Miền Trung, Vinmart, MT Mart, Q Mart...
+            </p>
+          </div>
+          <div class="contact-map">
+            <img class="map" src="../../img/map.png" alt="map" />
+          </div>
+          <div class="contact-comment">
+            <div class="comment-header">Viết nhận xét</div>
+            <div class="comment-container">
+              <div class="comment-content">
+                Nếu bạn có thắc mắc gì, có thể gửi yêu cầu cho chúng tôi, và
+                chúng tôi sẽ liên lạc lại với bạn sớm nhất có thể.
+              </div>
+              <div class="comment-form" id="comment-form">
+                <div class="comment-form-container" >
+                  <input
+                    type="text"
+                    class="comment-input"
+                    placeholder="Tên của bạn"
+                    name="name"
+                    id="name"
+                  />
+                  <span class="error-text" id="name-error"></span>
+                </div>
+                <div class="comment-form-container">
+                  <input
+                    type="text"
+                    class="comment-input"
+                    placeholder="Email của bạn"
+                    name="email"
+                    id="email"
+                  />
+                  <span class="error-text" id="email-error"></span>
+                </div>
+                <div class="comment-form-container">
+                  <textarea
+                    required
+                    rows="6"
+                    class="comment-input last"
+                    placeholder="Viết bình luận"
+                    id="comment"
+                    name="comment"
+                  >
+                  </textarea>
+                  <span class="error-text" id="comment-error"></span>
+                </div>
+                <div class="comment-form-controls">
+                  <button class="btn">Gửi liên hệ</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- footer -->
@@ -175,9 +240,7 @@
               <div class="footer-heading-a">
                 <!-- <GoClock class="icon" /> -->
                 <i class="far fa-clock icon"></i>
-                <div class="footer-heading-h">
-                  Làm việc các ngày trong tuần
-                </div>
+                <div class="footer-heading-h">Làm việc các ngày trong tuần</div>
               </div>
               <div class="footer-heading-c">Thứ 2 - Chủ Nhật</div>
               <div class="footer-heading-c">7h30 đến 22h30</div>
@@ -197,7 +260,6 @@
               <a href="../introduction/" class="container-items">Giới thiệu chung</a>
               <a href="../saleActivity/" class="container-items">Hoạt động kinh doanh</a>
             </div>
-
             <div class="container">
               <div class="container-h">Kết nối với chúng tôi</div>
               <div class="container-items"></div>
@@ -348,6 +410,8 @@
         </div>
       </div>
     </div>
-      <script src="./main.js"></script>
+
+    <script src="./main.js"></script>
+
   </body>
 </html>

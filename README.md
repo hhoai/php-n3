@@ -1,4 +1,6 @@
 # book-store
 https://hhoai.github.io/book-store/ 
 
-hoai
+  + giỏ hàng
+ 	+ thanh toán
+ 	+ lưu lịch sử tìm kiếm, gợi ý từ tìm kiếm

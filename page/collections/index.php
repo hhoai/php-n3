@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nhà sách Tiến Thọ</title>
-    <link rel="icon" type="image/x-icon" href="../img/favicon2.png" />
+    <link rel="icon" type="image/x-icon" href="../../img/favicon2.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -36,20 +36,21 @@
       </div>
     </div>
 
+    
     <!-- toolbar -->
     <div class="header-container">
       <div>
-        <img class="logo" src="../img/logo.png" alt="logo" />
+        <img class="logo" src="../../img/logo.png" alt="logo" />
       </div>
 
       <div class="search">
         <input type="search" placeholder="Tìm kiếm... " />
         <!-- <AiOutlineSearch class="fa-search" /> -->
-        <i class="fas fa-search"></i> 
+        <i class="fas fa-search"></i>
       </div>
 
       <div class="hotline">
-        <img class="img-hotline" src="../img/hotline.webp" alt="hotline" />
+        <img class="img-hotline" src="../../img/hotline.webp" alt="hotline" />
         <div class="hotline-phoneNumber">
           <p class="hotline-text">Hotline:</p>
           <a class="hotline-tel" href="tel:0987654321">0987654321</a>
@@ -57,17 +58,17 @@
       </div>
 
       <div class="shopping-cart">
-        <a class="shopping-cart-container" href="#">
+        <a class="shopping-cart-container" href="../shoppingCart">
           <!-- <FaShoppingCart class="fa-shopping-cart" /> -->
-           <i class="fas fa-shopping-cart"></i> 
+          <i class="fas fa-shopping-cart"></i>
           Giỏ hàng 
         </a>
-        <div class="notification">
+        <!-- <div class="notification">
           <div class="notification-message">
             Giỏ hàng của bạn đang trống
             <a class="red" href="../index.html">Tiếp tục mua hàng</a>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -75,8 +76,8 @@
     <div class="nav-header">
       <div class="nav-container">
         <li class="nav-left">
-          <a href="" class="nav-left-container">
-            <p class=" fs-16">
+          <a href="../collections" class="nav-left-container">
+            <p class="fs-16">
               <i class="fas fa-bars icon menu-icon"></i>
               <!-- <HiMenu class="icon menu-icon" /> -->
               Danh mục sản phẩm
@@ -86,16 +87,14 @@
           </a>
         </li>
         <li class="nav-right">
-          <a href="../index.html" class="nav-right-container">
+          <a href="../../index.php" class="nav-right-container">
             <p class="nav-text">Trang chủ</p>
           </a>
         </li>
         <li class="nav-right">
           <div href="#" class="nav-right-container">
             <div class="nav-text">
-              <div>
-              Giới thiệu
-              </div>
+              <div>Giới thiệu</div>
               <i class="fas fa-chevron-down icon down-icon"></i>
             </div>
             <div class="sub-nav">
@@ -119,7 +118,7 @@
         </li>
       </div>
     </div>
-   </div>
+
    <!-- end header -->
 
    <!-- collections -->
@@ -191,7 +190,7 @@
                 </div>
                 <a href="../bookDetail" class="book-img">
                   <img
-                    src="../img/book1.webp"
+                    src="../../img/book1.webp"
                     alt="mat_ngot_cho_tam_hon_tre_tho"
                   />
                 </a>
@@ -212,7 +211,7 @@
                 </div>
                 <a href="../bookDetail" class="book-img">
                   <img
-                    src="../img/book2.webp"
+                    src="../../img/book2.webp"
                     alt="mat_ngot_cho_tam_hon_thanh thieu nien"
                   />
                 </a>
@@ -235,7 +234,7 @@
                 </div>
                 <a href="../bookDetail" class="book-img">
                   <img
-                    src="../img/book3.webp"
+                    src="../../img/book3.webp"
                     alt="mat_ngot_cho_tam_hon_phu_nu"
                   />
                 </a>
@@ -255,7 +254,7 @@
                   <div class="book-sale">-20%</div>
                 </div>
                 <a href="../bookDetail" class="book-img">
-                  <img src="../img/book4.webp" alt="khong_phai_loi_cua_con" />
+                  <img src="../../img/book4.webp" alt="khong_phai_loi_cua_con" />
                 </a>
                 <a href="../bookDetail" class="book-name-a">
                   <div class="book-name">
@@ -276,7 +275,7 @@
                 </div>
                 <a href="../bookDetail" class="book-img">
                   <img
-                    src="../img/book5.webp"
+                    src="../../img/book5.webp"
                     alt="cha_me_lam_gi_tao_hung_thu_cho_con"
                   />
                 </a>
@@ -299,7 +298,7 @@
                 </div>
                 <a href="../bookDetail" class="book-img">
                   <img
-                    src="../img/book1.webp"
+                    src="../../img/book1.webp"
                     alt="mat_ngot_cho_tam_hon_tre_tho"
                   />
                 </a>
@@ -320,7 +319,7 @@
                 </div>
                 <a href="../bookDetail" class="book-img">
                   <img
-                    src="../img/book2.webp"
+                    src="../../img/book2.webp"
                     alt="mat_ngot_cho_tam_hon_thanh thieu nien"
                   />
                 </a>
@@ -343,7 +342,7 @@
                 </div>
                 <a href="../bookDetail" class="book-img">
                   <img
-                    src="../img/book3.webp"
+                    src="../../img/book3.webp"
                     alt="mat_ngot_cho_tam_hon_phu_nu"
                   />
                 </a>
@@ -364,7 +363,7 @@
                 </div>
                 <a href="../bookDetail" class="book-img">
                   <img
-                    src="../img/book5.webp"
+                    src="../../img/book5.webp"
                     alt="cha_me_lam_gi_tao_hung_thu_cho_con"
                   />
                 </a>
@@ -387,7 +386,7 @@
                 </div>
                 <a href="../bookDetail" class="book-img">
                   <img
-                    src="../img/book1.webp"
+                    src="../../img/book1.webp"
                     alt="mat_ngot_cho_tam_hon_tre_tho"
                   />
                 </a>
@@ -408,7 +407,7 @@
                 </div>
                 <a href="../bookDetail" class="book-img">
                   <img
-                    src="../img/book2.webp"
+                    src="../../img/book2.webp"
                     alt="mat_ngot_cho_tam_hon_thanh thieu nien"
                   />
                 </a>
@@ -431,7 +430,7 @@
                 </div>
                 <a href="../bookDetail" class="book-img">
                   <img
-                    src="../img/book3.webp"
+                    src="../../img/book3.webp"
                     alt="mat_ngot_cho_tam_hon_phu_nu"
                   />
                 </a>

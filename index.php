@@ -11,7 +11,6 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
     <link rel="stylesheet" href="./style.css" />
-    <link rel="stylesheet" href="./responsive.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -30,7 +29,7 @@
         </div>
         <div class="welcome-login hide">
           <a href="">Xin chào: User</a>
-          | <a href="">Đăng xuất</a>
+          | <a href="./index.php">Đăng xuất</a>
         </div>
       </div>
     </div>
@@ -42,9 +41,9 @@
       </div>
 
       <div class="search">
-        <input type="search" placeholder="Tìm kiếm... " />
+        <input type="search" onkeydown="handleChangeResult()" class="ip-search" placeholder="Tìm kiếm... " />
         <!-- <AiOutlineSearch class="fa-search" /> -->
-        <i class="fas fa-search"></i>
+        <button class="search-btn fas fa-search"></button>
       </div>
 
       <div class="hotline">
@@ -56,25 +55,26 @@
       </div>
 
       <div class="shopping-cart">
-        <a class="shopping-cart-container" href="#">
+        <a class="shopping-cart-container" href="./page/shoppingCart/index.php">
           <!-- <FaShoppingCart class="fa-shopping-cart" /> -->
           <i class="fas fa-shopping-cart"></i>
           Giỏ hàng
         </a>
-        <div class="notification">
+        <!-- <div class="notification">
           <div class="notification-message">
             Giỏ hàng của bạn đang trống
-            <a class="red" href="../index.html">Tiếp tục mua hàng</a>
+            <a class="red" href="./index.html">Tiếp tục mua hàng</a>
           </div>
-        </div>
+        </div> -->
       </div>
     </div>
+    <div class="search-suggest"></div>
 
     <!-- navigation -->
     <div class="nav-header">
       <div class="nav-container">
         <li class="nav-left">
-          <a href="" class="nav-left-container">
+          <a href="./index.php" class="nav-left-container">
             <p class="fs-16">
               <i class="fas fa-bars icon menu-icon"></i>
               <!-- <HiMenu class="icon menu-icon" /> -->
@@ -85,7 +85,7 @@
           </a>
         </li>
         <li class="nav-right">
-          <a href="index.html" class="nav-right-container">
+          <a href="index.php" class="nav-right-container">
             <p class="nav-text">Trang chủ</p>
           </a>
         </li>
@@ -97,12 +97,12 @@
             </div>
             <div class="sub-nav">
               <div class="introduce">
-                <a href="./introduction" class="introduce-item">
+                <a href="./page/introduction/" class="introduce-item">
                   <div class="sub-nav-content">Giới thiệu chung</div>
                 </a>
               </div>
               <div class="introduce">
-                <a href="./saleActivity" class="introduce-item">
+                <a href="./page/saleActivity" class="introduce-item">
                   <div class="sub-nav-content">Hoạt động kinh doanh</div>
                 </a>
               </div>
@@ -110,7 +110,7 @@
           </div>
         </li>
         <li class="nav-right">
-          <a href="./contact" class="nav-right-container">
+          <a href="./page/contact" class="nav-right-container">
             <p class="nav-text">Liên hệ</p>
           </a>
         </li>
@@ -125,7 +125,7 @@
           <div class="menu">
             <div class="menu-a">
               <li class="menu-container">
-                <a href="./collections/" class="menu-content">
+                <a href="./page/collections/" class="menu-content">
                   <div class="menu-items">Thiếu nhi</div>
                   <i class="fas fa-angle-right icon-right"></i>
                 </a>
@@ -136,24 +136,24 @@
                     <div>Danh mục</div>
                   </div>
                   <li class="sub-menu-container">
-                    <a href="./collections/" class="sub-menu-items">
+                    <a href="./page/collections/" class="sub-menu-items">
                       Khoa học thiếu nhi
                     </a>
                   </li>
                   <li class="sub-menu-container">
-                    <a href="./collections/" class="sub-menu-items">
+                    <a href="./page/collections/" class="sub-menu-items">
                       Văn học thiếu nhi
                     </a>
                   </li>
                   <li class="sub-menu-container">
-                    <a href="./collections/" class="sub-menu-items">
+                    <a href="./page/collections/" class="sub-menu-items">
                       Tủ sách cổ tích
                     </a>
                   </li>
                 </ul>
               </li>
               <li class="menu-container">
-                <a href="./collections/" class="menu-content">
+                <a href="./page/collections/" class="menu-content">
                   <div class="menu-items">Văn học</div>
                   <i class="fas fa-angle-right icon-right"></i>
                 </a>
@@ -163,24 +163,24 @@
                     <div>Danh mục</div>
                   </div>
                   <li class="sub-menu-container">
-                    <a href="./collections/" class="sub-menu-items">
+                    <a href="./page/collections/" class="sub-menu-items">
                       Văn học kinh điển
                     </a>
                   </li>
                   <li class="sub-menu-container">
-                    <a href="./collections/" class="sub-menu-items">
+                    <a href="./page/collections/" class="sub-menu-items">
                       Văn học thiếu nhi
                     </a>
                   </li>
                   <li class="sub-menu-container">
-                    <a href="./collections/" class="sub-menu-items">
+                    <a href="./page/collections/" class="sub-menu-items">
                       Thomas and friends
                     </a>
                   </li>
                 </ul>
               </li>
               <li class="menu-container">
-                <a href="./collections/" class="menu-content">
+                <a href="./page/collections/" class="menu-content">
                   <div class="menu-items">Tâm lý đời sống</div>
                   <i class="fas fa-angle-right icon-right"></i>
                 </a>
@@ -190,24 +190,24 @@
                     <div>Danh mục</div>
                   </div>
                   <li class="sub-menu-container">
-                    <a href="./collections/" class="sub-menu-items">
+                    <a href="./page/collections/" class="sub-menu-items">
                       Rèn luyện kỹ năng sống
                     </a>
                   </li>
                   <li class="sub-menu-container">
-                    <a href="./collections/" class="sub-menu-items">
+                    <a href="./page/collections/" class="sub-menu-items">
                       Tủ sách Bác Hồ
                     </a>
                   </li>
                   <li class="sub-menu-container">
-                    <a href="./collections/" class="sub-menu-items">
+                    <a href="./page/collections/" class="sub-menu-items">
                       Tủ sách sống đẹp
                     </a>
                   </li>
                 </ul>
               </li>
               <li class="menu-container">
-                <a href="./collections/" class="menu-content">
+                <a href="./page/collections/" class="menu-content">
                   <div class="menu-items">Khoa học</div>
                   <i class="fas fa-angle-right icon-right"></i>
                 </a>
@@ -217,29 +217,29 @@
                     <div>Danh mục</div>
                   </div>
                   <li class="sub-menu-container">
-                    <a href="./collections/" class="sub-menu-items">
+                    <a href="./page/collections/" class="sub-menu-items">
                       10 vạn câu hỏi vì sao
                     </a>
                   </li>
                   <li class="sub-menu-container">
-                    <a href="./collections/" class="sub-menu-items">
+                    <a href="./page/collections/" class="sub-menu-items">
                       365 ngày phát triển IQ
                     </a>
                   </li>
                   <li class="sub-menu-container">
-                    <a href="./collections/" class="sub-menu-items">
+                    <a href="./page/collections/" class="sub-menu-items">
                       Khám phá những bí ẩn
                     </a>
                   </li>
                   <li class="sub-menu-container">
-                    <a href="./collections/" class="sub-menu-items">
+                    <a href="./page/collections/" class="sub-menu-items">
                       Thế nào và tại sao
                     </a>
                   </li>
                 </ul>
               </li>
               <li class="menu-container">
-                <a href="./collections/" class="menu-content">
+                <a href="./page/collections/" class="menu-content">
                   <div class="menu-items">Chính trị lịch sử</div>
                   <i class="fas fa-angle-right icon-right"></i>
                 </a>
@@ -249,19 +249,19 @@
                     <div>Danh mục</div>
                   </div>
                   <li class="sub-menu-container">
-                    <a href="./collections/" class="sub-menu-items">
+                    <a href="./page/collections/" class="sub-menu-items">
                       Truyện tranh lịch sử
                     </a>
                   </li>
                   <li class="sub-menu-container">
-                    <a href="./collections/" class="sub-menu-items">
+                    <a href="./page/collections/" class="sub-menu-items">
                       Tủ sách Bác Hồ
                     </a>
                   </li>
                 </ul>
               </li>
               <li class="menu-container">
-                <a href="./collections/" class="menu-content">
+                <a href="./page/collections/" class="menu-content">
                   <div class="menu-items">Tham khảo</div>
                   <i class="fas fa-angle-right icon-right"></i>
                 </a>
@@ -271,12 +271,12 @@
                     <div>Danh mục</div>
                   </div>
                   <li class="sub-menu-container">
-                    <a href="./collections/" class="sub-menu-items">
+                    <a href="./page/collections/" class="sub-menu-items">
                       Giáo dục tham khảo
                     </a>
                   </li>
                   <li class="sub-menu-container">
-                    <a href="./collections/" class="sub-menu-items">
+                    <a href="./page/collections/" class="sub-menu-items">
                       Tủ sách ngoại ngữ
                     </a>
                   </li>
@@ -293,21 +293,21 @@
           </div>
         </div>
         <div class="banner">
-          <a href="./bookDetail" class="banner-items">
+          <a href="./page/bookDetail" class="banner-items">
             <img
               src="./img/img_banner_1.webp"
               alt="banner"
               class="banner-img"
             />
           </a>
-          <a href="./bookDetail" class="banner-items">
+          <a href="./page/bookDetail" class="banner-items">
             <img
               src="./img/img_banner_1.webp"
               alt="banner"
               class="banner-img"
             />
           </a>
-          <a href="./bookDetail" class="banner-items">
+          <a href="./page/bookDetail" class="banner-items">
             <img
               src="./img/img_banner_1.webp"
               alt="banner"
@@ -331,13 +331,13 @@
                 <div class="book-sale-a">
                   <div class="book-sale">-20%</div>
                 </div>
-                <a href="./bookDetail" class="book-img">
+                <a href="./page/bookDetail/index.php" class="book-img">
                   <img
                     src="./img/book1.webp"
                     alt="mat_ngot_cho_tam_hon_tre_tho"
                   />
                 </a>
-                <a href="./bookDetail" class="book-name-a">
+                <a href="./page/bookDetail/index.php" class="book-name-a">
                   <div class="book-name">Mật ngọt cho tâm hồn trẻ thơ</div>
                 </a>
                 <div class="book-price">
@@ -352,13 +352,13 @@
                 <div class="book-sale-a">
                   <div class="book-sale">-20%</div>
                 </div>
-                <a href="./bookDetail" class="book-img">
+                <a href="./page/bookDetail/index.php" class="book-img">
                   <img
                     src="./img/book2.webp"
                     alt="mat_ngot_cho_tam_hon_thanh thieu nien"
                   />
                 </a>
-                <a href="./bookDetail" class="book-name-a">
+                <a href="./page/bookDetail/index.php" class="book-name-a">
                   <div class="book-name">
                     Mật ngọt cho tâm hồn thanh thiếu niên
                   </div>
@@ -375,13 +375,13 @@
                 <div class="book-sale-a">
                   <div class="book-sale">-20%</div>
                 </div>
-                <a href="./bookDetail" class="book-img">
+                <a href="./page/bookDetail/index.php" class="book-img">
                   <img
                     src="./img/book3.webp"
                     alt="mat_ngot_cho_tam_hon_phu_nu"
                   />
                 </a>
-                <a href="./bookDetail" class="book-name-a">
+                <a href="./page/bookDetail/index.php" class="book-name-a">
                   <div class="book-name">Mật ngọt cho tâm hồn phụ nữ</div>
                 </a>
                 <div class="book-price">
@@ -396,10 +396,10 @@
                 <div class="book-sale-a">
                   <div class="book-sale">-20%</div>
                 </div>
-                <a href="./bookDetail" class="book-img">
+                <a href="./page/bookDetail/index.php" class="book-img">
                   <img src="./img/book4.webp" alt="khong_phai_loi_cua_con" />
                 </a>
-                <a href="./bookDetail" class="book-name-a">
+                <a href="./page/bookDetail/index.php" class="book-name-a">
                   <div class="book-name">
                     Giáo dục giới tính - Không phải lỗi của con
                   </div>
@@ -416,13 +416,13 @@
                 <div class="book-sale-a">
                   <div class="book-sale">-20%</div>
                 </div>
-                <a href="./bookDetail" class="book-img">
+                <a href="./page/bookDetail/index.php" class="book-img">
                   <img
                     src="./img/book5.webp"
                     alt="cha_me_lam_gi_tao_hung_thu_cho_con"
                   />
                 </a>
-                <a href="./bookDetail" class="book-name-a">
+                <a href="./page/bookDetail/index.php" class="book-name-a">
                   <div class="book-name">
                     Cha mẹ làm gì để tạo hứng thú cho con?
                   </div>
@@ -455,13 +455,13 @@
                   <div class="book-sale-a">
                     <div class="book-sale">-20%</div>
                   </div>
-                  <a href="./bookDetail" class="book-img">
+                  <a href="./page/bookDetail/index.php" class="book-img">
                     <img
                       src="./img/book1.webp"
                       alt="mat_ngot_cho_tam_hon_tre_tho"
                     />
                   </a>
-                  <a href="./bookDetail" class="book-name-a">
+                  <a href="./page/bookDetail/index.php" class="book-name-a">
                     <div class="book-name">Mật ngọt cho tâm hồn trẻ thơ</div>
                   </a>
                   <div class="book-price">
@@ -476,13 +476,13 @@
                   <div class="book-sale-a">
                     <div class="book-sale">-20%</div>
                   </div>
-                  <a href="./bookDetail" class="book-img">
+                  <a href="./page/bookDetail/index.php" class="book-img">
                     <img
                       src="./img/book2.webp"
                       alt="mat_ngot_cho_tam_hon_thanh thieu nien"
                     />
                   </a>
-                  <a href="./bookDetail" class="book-name-a">
+                  <a href="./page/bookDetail/index.php" class="book-name-a">
                     <div class="book-name">
                       Mật ngọt cho tâm hồn thanh thiếu niên
                     </div>
@@ -499,13 +499,13 @@
                   <div class="book-sale-a">
                     <div class="book-sale">-20%</div>
                   </div>
-                  <a href="./bookDetail" class="book-img">
+                  <a href="./page/bookDetail/index.php" class="book-img">
                     <img
                       src="./img/book3.webp"
                       alt="mat_ngot_cho_tam_hon_phu_nu"
                     />
                   </a>
-                  <a href="./bookDetail" class="book-name-a">
+                  <a href="./page/bookDetail/index.php" class="book-name-a">
                     <div class="book-name">Mật ngọt cho tâm hồn phụ nữ</div>
                   </a>
                   <div class="book-price">
@@ -520,10 +520,10 @@
                   <div class="book-sale-a">
                     <div class="book-sale">-20%</div>
                   </div>
-                  <a href="./bookDetail" class="book-img">
+                  <a href="./page/bookDetail/index.php" class="book-img">
                     <img src="./img/book4.webp" alt="khong_phai_loi_cua_con" />
                   </a>
-                  <a href="./bookDetail" class="book-name-a">
+                  <a href="./page/bookDetail/index.php" class="book-name-a">
                     <div class="book-name">
                       Giáo dục giới tính - Không phải lỗi của con
                     </div>
@@ -540,13 +540,13 @@
                   <div class="book-sale-a">
                     <div class="book-sale">-20%</div>
                   </div>
-                  <a href="./bookDetail" class="book-img">
+                  <a href="./page/bookDetail/index.php" class="book-img">
                     <img
                       src="./img/book5.webp"
                       alt="cha_me_lam_gi_tao_hung_thu_cho_con"
                     />
                   </a>
-                  <a href="./bookDetail" class="book-name-a">
+                  <a href="./page/bookDetail/index.php" class="book-name-a">
                     <div class="book-name">
                       Cha mẹ làm gì để tạo hứng thú cho con?
                     </div>
@@ -563,13 +563,13 @@
                   <div class="book-sale-a">
                     <div class="book-sale">-20%</div>
                   </div>
-                  <a href="./bookDetail" class="book-img">
+                  <a href="./page/bookDetail/index.php" class="book-img">
                     <img
                       src="./img/book1.webp"
                       alt="mat_ngot_cho_tam_hon_tre_tho"
                     />
                   </a>
-                  <a href="./bookDetail" class="book-name-a">
+                  <a href="./page/bookDetail/index.php" class="book-name-a">
                     <div class="book-name">Mật ngọt cho tâm hồn trẻ thơ</div>
                   </a>
                   <div class="book-price">
@@ -584,13 +584,13 @@
                   <div class="book-sale-a">
                     <div class="book-sale">-20%</div>
                   </div>
-                  <a href="./bookDetail" class="book-img">
+                  <a href="./page/bookDetail/index.php" class="book-img">
                     <img
                       src="./img/book2.webp"
                       alt="mat_ngot_cho_tam_hon_thanh thieu nien"
                     />
                   </a>
-                  <a href="./bookDetail" class="book-name-a">
+                  <a href="./page/bookDetail/index.php" class="book-name-a">
                     <div class="book-name">
                       Mật ngọt cho tâm hồn thanh thiếu niên
                     </div>
@@ -607,13 +607,13 @@
                   <div class="book-sale-a">
                     <div class="book-sale">-20%</div>
                   </div>
-                  <a href="./bookDetail" class="book-img">
+                  <a href="./page/bookDetail/index.php" class="book-img">
                     <img
                       src="./img/book3.webp"
                       alt="mat_ngot_cho_tam_hon_phu_nu"
                     />
                   </a>
-                  <a href="./bookDetail" class="book-name-a">
+                  <a href="./page/bookDetail/index.php" class="book-name-a">
                     <div class="book-name">Mật ngọt cho tâm hồn phụ nữ</div>
                   </a>
                   <div class="book-price">
@@ -645,13 +645,13 @@
                   <div class="book-sale-a">
                     <div class="book-sale">-20%</div>
                   </div>
-                  <a href="./bookDetail" class="book-img">
+                  <a href="./page/bookDetail/index.php" class="book-img">
                     <img
                       src="./img/book1.webp"
                       alt="mat_ngot_cho_tam_hon_tre_tho"
                     />
                   </a>
-                  <a href="./bookDetail" class="book-name-a">
+                  <a href="./page/bookDetail/index.php" class="book-name-a">
                     <div class="book-name">Mật ngọt cho tâm hồn trẻ thơ</div>
                   </a>
                   <div class="book-price">
@@ -666,13 +666,13 @@
                   <div class="book-sale-a">
                     <div class="book-sale">-20%</div>
                   </div>
-                  <a href="./bookDetail" class="book-img">
+                  <a href="./page/bookDetail" class="book-img">
                     <img
                       src="./img/book2.webp"
                       alt="mat_ngot_cho_tam_hon_thanh thieu nien"
                     />
                   </a>
-                  <a href="./bookDetail" class="book-name-a">
+                  <a href="./page/bookDetail" class="book-name-a">
                     <div class="book-name">
                       Mật ngọt cho tâm hồn thanh thiếu niên
                     </div>
@@ -689,13 +689,13 @@
                   <div class="book-sale-a">
                     <div class="book-sale">-20%</div>
                   </div>
-                  <a href="./bookDetail" class="book-img">
+                  <a href="./page/bookDetail" class="book-img">
                     <img
                       src="./img/book3.webp"
                       alt="mat_ngot_cho_tam_hon_phu_nu"
                     />
                   </a>
-                  <a href="./bookDetail" class="book-name-a">
+                  <a href="./page/bookDetail" class="book-name-a">
                     <div class="book-name">Mật ngọt cho tâm hồn phụ nữ</div>
                   </a>
                   <div class="book-price">
@@ -710,10 +710,10 @@
                   <div class="book-sale-a">
                     <div class="book-sale">-20%</div>
                   </div>
-                  <a href="./bookDetail" class="book-img">
+                  <a href="./page/bookDetail" class="book-img">
                     <img src="./img/book4.webp" alt="khong_phai_loi_cua_con" />
                   </a>
-                  <a href="./bookDetail" class="book-name-a">
+                  <a href="./page/bookDetail" class="book-name-a">
                     <div class="book-name">
                       Giáo dục giới tính - Không phải lỗi của con
                     </div>
@@ -730,13 +730,13 @@
                   <div class="book-sale-a">
                     <div class="book-sale">-20%</div>
                   </div>
-                  <a href="./bookDetail" class="book-img">
+                  <a href="./page/bookDetail" class="book-img">
                     <img
                       src="./img/book5.webp"
                       alt="cha_me_lam_gi_tao_hung_thu_cho_con"
                     />
                   </a>
-                  <a href="./bookDetail" class="book-name-a">
+                  <a href="./page/bookDetail" class="book-name-a">
                     <div class="book-name">
                       Cha mẹ làm gì để tạo hứng thú cho con?
                     </div>
@@ -753,13 +753,13 @@
                   <div class="book-sale-a">
                     <div class="book-sale">-20%</div>
                   </div>
-                  <a href="./bookDetail" class="book-img">
+                  <a href="./page/bookDetail" class="book-img">
                     <img
                       src="./img/book1.webp"
                       alt="mat_ngot_cho_tam_hon_tre_tho"
                     />
                   </a>
-                  <a href="./bookDetail" class="book-name-a">
+                  <a href="./page/bookDetail" class="book-name-a">
                     <div class="book-name">Mật ngọt cho tâm hồn trẻ thơ</div>
                   </a>
                   <div class="book-price">
@@ -774,13 +774,13 @@
                   <div class="book-sale-a">
                     <div class="book-sale">-20%</div>
                   </div>
-                  <a href="./bookDetail" class="book-img">
+                  <a href="./page/bookDetail" class="book-img">
                     <img
                       src="./img/book2.webp"
                       alt="mat_ngot_cho_tam_hon_thanh thieu nien"
                     />
                   </a>
-                  <a href="./bookDetail" class="book-name-a">
+                  <a href="./page/bookDetail" class="book-name-a">
                     <div class="book-name">
                       Mật ngọt cho tâm hồn thanh thiếu niên
                     </div>
@@ -797,13 +797,13 @@
                   <div class="book-sale-a">
                     <div class="book-sale">-20%</div>
                   </div>
-                  <a href="./bookDetail" class="book-img">
+                  <a href="./page/bookDetail" class="book-img">
                     <img
                       src="./img/book3.webp"
                       alt="mat_ngot_cho_tam_hon_phu_nu"
                     />
                   </a>
-                  <a href="./bookDetail" class="book-name-a">
+                  <a href="./page/bookDetail" class="book-name-a">
                     <div class="book-name">Mật ngọt cho tâm hồn phụ nữ</div>
                   </a>
                   <div class="book-price">
@@ -838,13 +838,13 @@
                   <div class="book-sale-a">
                     <div class="book-sale">-20%</div>
                   </div>
-                  <a href="./bookDetail" class="book-img">
+                  <a href="./page/bookDetail" class="book-img">
                     <img
                       src="./img/book1.webp"
                       alt="mat_ngot_cho_tam_hon_tre_tho"
                     />
                   </a>
-                  <a href="./bookDetail" class="book-name-a">
+                  <a href="./page/bookDetail" class="book-name-a">
                     <div class="book-name">Mật ngọt cho tâm hồn trẻ thơ</div>
                   </a>
                   <div class="book-price">
@@ -859,13 +859,13 @@
                   <div class="book-sale-a">
                     <div class="book-sale">-20%</div>
                   </div>
-                  <a href="./bookDetail" class="book-img">
+                  <a href="./page/bookDetail" class="book-img">
                     <img
                       src="./img/book2.webp"
                       alt="mat_ngot_cho_tam_hon_thanh thieu nien"
                     />
                   </a>
-                  <a href="./bookDetail" class="book-name-a">
+                  <a href="./page/bookDetail" class="book-name-a">
                     <div class="book-name">
                       Mật ngọt cho tâm hồn thanh thiếu niên
                     </div>
@@ -882,13 +882,13 @@
                   <div class="book-sale-a">
                     <div class="book-sale">-20%</div>
                   </div>
-                  <a href="./bookDetail" class="book-img">
+                  <a href="./page/bookDetail" class="book-img">
                     <img
                       src="./img/book3.webp"
                       alt="mat_ngot_cho_tam_hon_phu_nu"
                     />
                   </a>
-                  <a href="./bookDetail" class="book-name-a">
+                  <a href="./page/bookDetail" class="book-name-a">
                     <div class="book-name">Mật ngọt cho tâm hồn phụ nữ</div>
                   </a>
                   <div class="book-price">
@@ -903,10 +903,10 @@
                   <div class="book-sale-a">
                     <div class="book-sale">-20%</div>
                   </div>
-                  <a href="./bookDetail" class="book-img">
+                  <a href="./page/bookDetail" class="book-img">
                     <img src="./img/book4.webp" alt="khong_phai_loi_cua_con" />
                   </a>
-                  <a href="./bookDetail" class="book-name-a">
+                  <a href="./page/bookDetail" class="book-name-a">
                     <div class="book-name">
                       Giáo dục giới tính - Không phải lỗi của con
                     </div>
@@ -923,13 +923,13 @@
                   <div class="book-sale-a">
                     <div class="book-sale">-20%</div>
                   </div>
-                  <a href="./bookDetail" class="book-img">
+                  <a href="./page/bookDetail" class="book-img">
                     <img
                       src="./img/book5.webp"
                       alt="cha_me_lam_gi_tao_hung_thu_cho_con"
                     />
                   </a>
-                  <a href="./bookDetail" class="book-name-a">
+                  <a href="./page/bookDetail" class="book-name-a">
                     <div class="book-name">
                       Cha mẹ làm gì để tạo hứng thú cho con?
                     </div>
@@ -946,13 +946,13 @@
                   <div class="book-sale-a">
                     <div class="book-sale">-20%</div>
                   </div>
-                  <a href="./bookDetail" class="book-img">
+                  <a href="./page/bookDetail" class="book-img">
                     <img
                       src="./img/book1.webp"
                       alt="mat_ngot_cho_tam_hon_tre_tho"
                     />
                   </a>
-                  <a href="./bookDetail" class="book-name-a">
+                  <a href="./page/bookDetail" class="book-name-a">
                     <div class="book-name">Mật ngọt cho tâm hồn trẻ thơ</div>
                   </a>
                   <div class="book-price">
@@ -967,13 +967,13 @@
                   <div class="book-sale-a">
                     <div class="book-sale">-20%</div>
                   </div>
-                  <a href="./bookDetail" class="book-img">
+                  <a href="./page/bookDetail" class="book-img">
                     <img
                       src="./img/book2.webp"
                       alt="mat_ngot_cho_tam_hon_thanh thieu nien"
                     />
                   </a>
-                  <a href="./bookDetail" class="book-name-a">
+                  <a href="./page/bookDetail" class="book-name-a">
                     <div class="book-name">
                       Mật ngọt cho tâm hồn thanh thiếu niên
                     </div>
@@ -990,13 +990,13 @@
                   <div class="book-sale-a">
                     <div class="book-sale">-20%</div>
                   </div>
-                  <a href="./bookDetail" class="book-img">
+                  <a href="./page/bookDetail" class="book-img">
                     <img
                       src="./img/book3.webp"
                       alt="mat_ngot_cho_tam_hon_phu_nu"
                     />
                   </a>
-                  <a href="./bookDetail" class="book-name-a">
+                  <a href="./page/bookDetail" class="book-name-a">
                     <div class="book-name">Mật ngọt cho tâm hồn phụ nữ</div>
                   </a>
                   <div class="book-price">
