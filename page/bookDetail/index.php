@@ -10,7 +10,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <link rel="stylesheet" href="./book-detail.css" />
+    <!-- <link rel="stylesheet" href="./book-detail.css" /> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,18 +18,31 @@
       rel="stylesheet"
     />
   </head> 
+  <style>
+    <?php include 'book-detail.css'; ?>
+  </style>
   <body>
     <!-- welcome -->
    <div class="welcome">
       <div class="welcome-container flex pl-8">
         <p class="welcome-left">Chào mừng bạn đến với nhà sách Tiến Thọ</p>
-        <div class="welcome-log ">
-          <a class="bg-red signup" href="#"> Đăng ký </a>
-          | <a class="login" href="#">Đăng nhập</a>
-        </div>
-        <div class="welcome-login hide">
-          <a href="">Xin chào: User</a>
-          | <a href="">Đăng xuất</a>
+        <div class="welcome-log">
+          <?php 
+            $islogin = false;
+            $userName = "Hoa";
+            if (!$islogin) {
+              ?>
+                <a href="../login"> Đăng ký </a>
+              | <a href="../signup">Đăng nhập</a>
+              <?php
+            }
+            else {
+              echo "
+                <a>Xin chào: $userName</a>
+              | <a>Đăng xuất</a>
+              ";
+            } 
+          ?>
         </div>
       </div>
     </div>
@@ -60,12 +73,6 @@
           <i class="fas fa-shopping-cart"></i>
           Giỏ hàng 
         </a>
-        <!-- <div class="notification">
-          <div class="notification-message">
-            Giỏ hàng của bạn đang trống
-            <a class="red" href="../index.html">Tiếp tục mua hàng</a>
-          </div>
-        </div> -->
       </div>
     </div>
 
@@ -777,7 +784,5 @@
         </div>
       </div>
     </div>
-
-    <script src="./main.js"></script>
   </body>
 </html>

@@ -80,7 +80,7 @@
     <div class="nav-header">
       <div class="nav-container">
         <li class="nav-left">
-          <a href="./index.php" class="nav-left-container">
+          <a href="../collections/" class="nav-left-container">
             <p class="fs-16">
               <i class="fas fa-bars icon menu-icon"></i>
               <!-- <HiMenu class="icon menu-icon" /> -->
@@ -91,7 +91,7 @@
           </a>
         </li>
         <li class="nav-right">
-          <a href="index.php" class="nav-right-container">
+          <a href="../../index.php" class="nav-right-container">
             <p class="nav-text">Trang chủ</p>
           </a>
         </li>
@@ -103,12 +103,12 @@
             </div>
             <div class="sub-nav">
               <div class="introduce">
-                <a href="./page/introduction/" class="introduce-item">
+                <a href="../introduction/" class="introduce-item">
                   <div class="sub-nav-content">Giới thiệu chung</div>
                 </a>
               </div>
               <div class="introduce">
-                <a href="./page/saleActivity" class="introduce-item">
+                <a href="../saleActivity" class="introduce-item">
                   <div class="sub-nav-content">Hoạt động kinh doanh</div>
                 </a>
               </div>
@@ -116,7 +116,7 @@
           </div>
         </li>
         <li class="nav-right">
-          <a href="./page/contact" class="nav-right-container">
+          <a href="../contact" class="nav-right-container">
             <p class="nav-text">Liên hệ</p>
           </a>
         </li>

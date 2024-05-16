@@ -18,18 +18,31 @@
       rel="stylesheet"
     />
   </head>
+  <style>
+    <?php include 'shopping-cart.css'; ?>
+  </style>
   <body>
     <!-- welcome -->
     <div class="welcome">
       <div class="welcome-container flex pl-8">
         <p class="welcome-left">Chào mừng bạn đến với nhà sách Tiến Thọ</p>
         <div class="welcome-log">
-          <a class="bg-red signup" href="#"> Đăng ký </a>
-          | <a class="login" href="#">Đăng nhập</a>
-        </div>
-        <div class="welcome-login hide">
-          <a href="">Xin chào: User</a>
-          | <a href="">Đăng xuất</a>
+          <?php 
+            $islogin = true;
+            $userName = "Hoa";
+            if (!$islogin) {
+              ?>
+                <a href="../login"> Đăng ký </a>
+              | <a href="../signup">Đăng nhập</a>
+              <?php
+            }
+            else {
+              echo "
+                <a>Xin chào: $userName</a>
+              | <a>Đăng xuất</a>
+              ";
+            } 
+          ?>
         </div>
       </div>
     </div>
@@ -43,7 +56,6 @@
       <div class="search">
         <input
           type="search"
-          onkeydown="handleChangeResult()"
           class="ip-search"
           placeholder="Tìm kiếm... "
         />
@@ -123,19 +135,98 @@
           <p class="header-link">Giỏ hàng</p>
         </div>
       </div>
-      <div class="empty-cart">
-        <img
-          src="https://bizweb.dktcdn.net/100/418/570/themes/935770/assets/cart_empty_background.png?1715260799692"
-          alt="cart_empty_background"
-        />
-        <p class="empty-text">Giỏ hàng của bạn đang trống!</p>
-        <a class="red" href="../index.html">Tiếp tục mua hàng</a>
-      </div>
-      <div class="cart-container hide">
-        <div class="cart-content">
-          <p class="cart-header">Giỏ hàng</p>
-        </div>
-      </div>
+      <?php 
+        $isEmptyCart = false;
+        if(!$islogin || $isEmptyCart) {
+          ?>
+           <div class="empty-cart">
+            <img
+              src="https://bizweb.dktcdn.net/100/418/570/themes/935770/assets/cart_empty_background.png?1715260799692"
+              alt="cart_empty_background"
+            />
+            <p class="empty-text">Giỏ hàng của bạn đang trống!</p>
+            <a class="red" href="../index.html">Tiếp tục mua hàng</a>
+          </div>
+          <?php
+        } else {
+          ?> 
+          <div class="cart-container">
+            <div class="cart-content">
+              <p class="cart-header">Giỏ hàng</p>
+              <form action="" method="post" style="width:fit-content;">
+                <table class="product">
+                  <tr>
+                    <th>STT</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Số lượng</th>
+                    <th>Giá</th>
+                    <th>Thành tiền</th>
+                    <th></th>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td class="product-name">
+                      <img class="product-img" src="../../img/book1.webp" alt="mat_ngot_cho_tam_hon_tre_tho">
+                      <apan>Mật ngọt cho tâm hồn trẻ thơ</apan>
+                    </td>
+                    <td class="quantity">
+                      <input type="number" name="quantity0" class="quantity-ip" value="2" min="1"/>
+                    </td>
+                    <td class="price">
+                      128000 VND
+                    </td>
+                    <td class="price">
+                      256000 VND
+                    </td>
+                    <td class="setting">
+                      <span class="nav-items delete">
+                        <i class="fas fa-trash-alt"></i>
+                      </span>
+                      <span class="nav-items edit">
+                        <i class="fas fa-pen"></i>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td class="product-name">
+                      <img class="product-img" src="../../img/book2.webp" alt="mat_ngot_cho_tam_hon_thanh_thieu_nien">
+                      <span>Mật ngọt cho tâm hồn thanh thiếu niên</span>
+                    </td>
+                    <td class="quantity">
+                      <input type="number" name="quantity1" class="quantity-ip" value="1" min="1"/>
+                    </td>
+                    <td class="price">
+                      150000 VND
+                    </td>
+                    <td class="price">
+                      15000 VND
+                    </td>
+                    <td class="setting">
+                      <span class="nav-items delete">
+                        <i class="fas fa-trash-alt"></i>
+                      </span>
+                      <span class="nav-items edit">
+                        <i class="fas fa-pen"></i>
+                      </span>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="total-text" colspan="4">Tổng tiền: </td>
+                    <td class="total-number" colspan="2">
+                      <input type="text" name="total" class="tong" value="406000 VND">
+                    </td>
+                  </tr>
+                </table>
+                <div class="payment">
+                  <a href="../payment" class="payment-btn">Thanh toán</a>
+                </div>
+              </form>
+            </div>
+          </div>
+          <?php
+        }  
+      ?>
     </div>
 
     <!-- footer -->
@@ -218,122 +309,6 @@
       </div>
     </div>
 
-    <!-- modal -->
-    <!-- sign in -->
-    <div class="form-wrapper hide">
-      <div class="modal">
-        <div class="modal-overlay"></div>
-        <div class="modal-body">
-          <div class="modal-inner">
-            <!-- authen form -->
-            <div class="auth-form">
-              <div class="out">
-                <i class="fas fa-times"></i>
-                <!-- <AiOutlineClose /> -->
-              </div>
-              <div class="auth-form__container">
-                <div class="sign-in type">
-                  <div class="auth-form__header">
-                    <h3 class="auth-form__heading">Đăng nhập</h3>
-                    <span class="auth-form__switch-btn">Đăng ký</span>
-                  </div>
-
-                  <div class="auth-form__content">
-                    <div class="auth-form__form">
-                      <div class="auth-form__group">
-                        <input
-                          type="text"
-                          class="auth-form__input"
-                          placeholder="Tên đăng nhập"
-                        />
-                      </div>
-                      <div class="auth-form__group">
-                        <input
-                          type="password"
-                          class="auth-form__input"
-                          placeholder="Mật khẩu"
-                        />
-                      </div>
-                      <div class="auth-form__miss">
-                        <a class="auth-form__miss-t">Quên mật khẩu?</a>
-                      </div>
-                    </div>
-
-                    <div class="auth-form__controls">
-                      <button class="btn">Đăng nhập</button>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="sign-up type">
-                  <div class="auth-form__header">
-                    <h3 class="auth-form__heading">Đăng ký</h3>
-                    <span class="auth-form__switch-btn">Đăng nhập</span>
-                  </div>
-
-                  <div class="auth-form__content">
-                    <div class="auth-form__form">
-                      <div class="auth-form__group">
-                        <input
-                          type="text"
-                          class="auth-form__input"
-                          placeholder="Tên đăng nhập"
-                        />
-                      </div>
-                      <div class="auth-form__group">
-                        <input
-                          type="password"
-                          class="auth-form__input"
-                          placeholder="Mật khẩu"
-                        />
-                      </div>
-                      <div class="auth-form__group">
-                        <input
-                          type="password"
-                          class="auth-form__input"
-                          placeholder="Nhập lại mật khẩu"
-                        />
-                      </div>
-                    </div>
-
-                    <div class="auth-form__aside">
-                      <p class="auth-form__policy-text">
-                        Bằng cách đăng ký, bạn đồng ý với
-                        <a href="" class="auth-form__policy-link">
-                          Điều khoản dịch vụ
-                        </a>
-                        &
-                        <a href="" class="auth-form__policy-link">
-                          Chính sách bảo mật của chúng tôi.
-                        </a>
-                      </p>
-                    </div>
-
-                    <div class="auth-form__controls">
-                      <button class="btn">Đăng ký</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="auth-form__socials">
-                <a href="" class="btn--with-icon facebook-icon">
-                  <!-- <FaFacebook class="social-icon" /> -->
-                  <i class="fab fa-facebook social-icon"></i>
-                  <div>Kết nối với Facebook</div>
-                </a>
-                <a href="" class="btn--with-icon">
-                  <!-- <FaGooglePlus class="social-icon" /> -->
-                  <i class="fab fa-google-plus social-icon"></i>
-                  <div>Kết nối với Google</div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script src="./main.js"></script>
+    
   </body>
 </html>

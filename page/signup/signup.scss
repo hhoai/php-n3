@@ -164,25 +164,6 @@
   }
 }
 
-.search-suggest {
-  position: absolute;
-  z-index: 1;
-  top: 122px;
-  left: 470px;
-  width: 400px;
-  padding: 10px;
-  background-color: #eeeeee;
-  color: #000000;
-  .searched {
-    &.hide {
-      display: none;
-      display: none;
-    }
-  }
-  &.hide {
-  }
-}
-
 // navigation
 .nav-header {
   height: 45px;
@@ -385,8 +366,6 @@
           font-size: 24px;
           color: #e44f4f;
           font-weight: 400;
-        }
-        .time {
         }
         .address {
           .icon {

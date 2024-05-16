@@ -10,7 +10,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <link rel="stylesheet" href="./collections.css" />
+    <!-- <link rel="stylesheet" href="./collections.css" /> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,20 +18,33 @@
       rel="stylesheet"
     />
   </head>
+  <style>
+    <?php include 'collections.css'; ?>
+  </style>
   <body>
     <!-- begin header -->
    <div id="header">
      <!-- welcome -->
-       <div class="welcome">
-      <div class="welcome-container flex pl-8">
+      <div class="welcome">
+        <div class="welcome-container flex pl-8">
         <p class="welcome-left">Chào mừng bạn đến với nhà sách Tiến Thọ</p>
-        <div class="welcome-log ">
-          <a class="bg-red signup" href="#"> Đăng ký </a>
-          | <a class="login" href="#">Đăng nhập</a>
-        </div>
-        <div class="welcome-login hide">
-          <a href="">Xin chào: User</a>
-          | <a href="">Đăng xuất</a>
+        <div class="welcome-log">
+          <?php 
+            $islogin = false;
+            $userName = "Hoa";
+            if (!$islogin) {
+              ?>
+                <a href="../login"> Đăng ký </a>
+              | <a href="../signup">Đăng nhập</a>
+              <?php
+            }
+            else {
+              echo "
+                <a>Xin chào: $userName</a>
+              | <a>Đăng xuất</a>
+              ";
+            } 
+          ?>
         </div>
       </div>
     </div>

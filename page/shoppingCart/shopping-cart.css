@@ -317,9 +317,6 @@ li {
 .cart .empty-cart .red:hover {
   text-decoration: underline;
 }
-.cart .empty-cart.hide {
-  display: none;
-}
 .cart .cart-container {
   background-color: #fff;
   margin-bottom: 40px;
@@ -334,6 +331,58 @@ li {
   padding: 20px 0;
   color: #b7001d;
   text-transform: uppercase;
+}
+.cart .cart-container .cart-content .product, .cart .cart-container .cart-content th, .cart .cart-container .cart-content td {
+  border: 1px solid #000;
+  border-collapse: collapse;
+  padding: 5px;
+}
+.cart .cart-container .cart-content .product {
+  width: 1200px;
+}
+.cart .cart-container .cart-content .product .product-name .product-img {
+  height: 100px;
+  padding: 0px 10px;
+}
+.cart .cart-container .cart-content .product .quantity .quantity-ip {
+  padding: 5px;
+  width: 100%;
+}
+.cart .cart-container .cart-content .product .price {
+  text-align: center;
+}
+.cart .cart-container .cart-content .product .setting {
+  text-align: center;
+  font-size: 22px;
+}
+.cart .cart-container .cart-content .product .setting .delete {
+  color: #ff0000;
+  cursor: pointer;
+  padding-right: 5px;
+}
+.cart .cart-container .cart-content .product .setting .edit {
+  color: #18a018;
+  cursor: pointer;
+}
+.cart .cart-container .cart-content .product .total-text {
+  text-align: right;
+}
+.cart .cart-container .cart-content .product .total-number {
+  text-align: right;
+}
+.cart .cart-container .cart-content .product .total-number .tong {
+  border: none;
+}
+.cart .cart-container .cart-content .payment {
+  margin: 25px 0px 40px 0px;
+  text-align: right;
+}
+.cart .cart-container .cart-content .payment .payment-btn {
+  padding: 10px 25px;
+  border: 1px solid #ce0021;
+  border-radius: 8px;
+  background-color: #ce0021;
+  color: #fff;
 }
 .cart .cart-container.hide {
   display: none;

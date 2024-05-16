@@ -179,20 +179,6 @@ li {
   color: #ce0021;
 }
 
-.search-suggest {
-  position: absolute;
-  z-index: 1;
-  top: 122px;
-  left: 470px;
-  width: 400px;
-  padding: 10px;
-  background-color: #eeeeee;
-  color: #000000;
-}
-.search-suggest .searched.hide {
-  display: none;
-  display: none;
-}
 .nav-header {
   height: 45px;
   background-color: #ce0021;
