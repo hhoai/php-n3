@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +10,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <link rel="stylesheet" href="./shopping-cart.css" />
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,18 +18,31 @@
       rel="stylesheet"
     />
   </head>
-  <body>
-    <!-- welcome -->
+<style>
+    <?php include 'signup.css'; ?>
+  </style>
+<body>
+  <!-- welcome -->
     <div class="welcome">
       <div class="welcome-container flex pl-8">
         <p class="welcome-left">Chào mừng bạn đến với nhà sách Tiến Thọ</p>
         <div class="welcome-log">
-          <a class="bg-red signup" href="#"> Đăng ký </a>
-          | <a class="login" href="#">Đăng nhập</a>
-        </div>
-        <div class="welcome-login hide">
-          <a href="">Xin chào: User</a>
-          | <a href="">Đăng xuất</a>
+          <?php 
+            $islogin = false;
+            $userName = "Hoa";
+            if (!$islogin) {
+              ?>
+                <a href="../login"> Đăng ký </a>
+              | <a href="./index.php">Đăng nhập</a>
+              <?php
+            }
+            else {
+              echo "
+                <a>Xin chào: $userName</a>
+              | <a>Đăng xuất</a>
+              ";
+            } 
+          ?>
         </div>
       </div>
     </div>
@@ -41,12 +54,7 @@
       </div>
 
       <div class="search">
-        <input
-          type="search"
-          onkeydown="handleChangeResult()"
-          class="ip-search"
-          placeholder="Tìm kiếm... "
-        />
+        <input type="search" class="ip-search" placeholder="Tìm kiếm... " />
         <!-- <AiOutlineSearch class="fa-search" /> -->
         <button class="search-btn fas fa-search"></button>
       </div>
@@ -60,7 +68,7 @@
       </div>
 
       <div class="shopping-cart">
-        <a class="shopping-cart-container" href="./index.php">
+        <a class="shopping-cart-container" href="./page/shoppingCart/index.php">
           <!-- <FaShoppingCart class="fa-shopping-cart" /> -->
           <i class="fas fa-shopping-cart"></i>
           Giỏ hàng
@@ -72,18 +80,18 @@
     <div class="nav-header">
       <div class="nav-container">
         <li class="nav-left">
-          <a href="../collections/" class="nav-left-container">
+          <a href="./index.php" class="nav-left-container">
             <p class="fs-16">
               <i class="fas fa-bars icon menu-icon"></i>
               <!-- <HiMenu class="icon menu-icon" /> -->
               Danh mục sản phẩm
-              <!-- <i class="fas fa-chevron-down icon down-icon"></i> -->
+              <i class="fas fa-chevron-down icon down-icon"></i>
               <!-- <HiChevronDown class="icon down-icon" /> -->
             </p>
           </a>
         </li>
         <li class="nav-right">
-          <a href="../../index.php" class="nav-right-container">
+          <a href="index.php" class="nav-right-container">
             <p class="nav-text">Trang chủ</p>
           </a>
         </li>
@@ -95,12 +103,12 @@
             </div>
             <div class="sub-nav">
               <div class="introduce">
-                <a href="../introduction" class="introduce-item">
+                <a href="./page/introduction/" class="introduce-item">
                   <div class="sub-nav-content">Giới thiệu chung</div>
                 </a>
               </div>
               <div class="introduce">
-                <a href="../saleActivity" class="introduce-item">
+                <a href="./page/saleActivity" class="introduce-item">
                   <div class="sub-nav-content">Hoạt động kinh doanh</div>
                 </a>
               </div>
@@ -108,36 +116,63 @@
           </div>
         </li>
         <li class="nav-right">
-          <a href="./contact" class="nav-right-container">
+          <a href="./page/contact" class="nav-right-container">
             <p class="nav-text">Liên hệ</p>
           </a>
         </li>
       </div>
     </div>
+    <!-- modal -->
+    <!-- sign in -->
+    <div class="modal">
+    <div class="form__container">
+      <h2 class="form-header">Đăng nhập tài khoản</h2>
+      <div class="auth-form__socials">
+        <a href="" class="btn--with-icon facebook-icon">
+          <!-- <FaFacebook class="social-icon" /> -->
+          <i class="fab fa-facebook social-icon"></i>
+          <div>Kết nối với Facebook</div>
+        </a>
+        <a href="" class="btn--with-icon">
+          <!-- <FaGooglePlus class="social-icon" /> -->
+          <i class="fab fa-google-plus social-icon"></i>
+          <div>Kết nối với Google</div>
+        </a>
+      </div>
+      <div class="or">
+        <hr class="or-hr"/>
+        <span class="or-text">hoặc</span>
+      </div>
+      <form method="post" class="auth-form__content">
+        <div  class="auth-form__form">
+          <div class="auth-form__group">
+            <p class="lable">Tên đăng nhập</p>
+            <input
+              type="text"
+              class="auth-form__input"
+              placeholder="Tên đăng nhập"
+            />
+          </div>
+          <div class="auth-form__group">
+            <p class="lable">Mật khẩu</p>
+            <input
+              type="password"
+              class="auth-form__input"
+              placeholder="Mật khẩu"
+            />
+          </div>
+          <div class="auth-form__miss">
+            <a class="auth-form__miss-t">Quên mật khẩu?</a>
+          </div>
+        </div>
 
-    <!-- content -->
-    <div class="cart">
-      <div class="header">
-        <div class="link-a">
-          <a href="../index.html" class="header-link link">Trang chủ </a>/
-          <p class="header-link">Giỏ hàng</p>
+        <div class="auth-form__controls">
+          <button class="btn">Đăng nhập</button>
         </div>
-      </div>
-      <div class="empty-cart">
-        <img
-          src="https://bizweb.dktcdn.net/100/418/570/themes/935770/assets/cart_empty_background.png?1715260799692"
-          alt="cart_empty_background"
-        />
-        <p class="empty-text">Giỏ hàng của bạn đang trống!</p>
-        <a class="red" href="../index.html">Tiếp tục mua hàng</a>
-      </div>
-      <div class="cart-container hide">
-        <div class="cart-content">
-          <p class="cart-header">Giỏ hàng</p>
-        </div>
-      </div>
+      </form>
     </div>
 
+    </div>
     <!-- footer -->
     <div class="main-footer">
       <div class="footer">
@@ -218,122 +253,5 @@
       </div>
     </div>
 
-    <!-- modal -->
-    <!-- sign in -->
-    <div class="form-wrapper hide">
-      <div class="modal">
-        <div class="modal-overlay"></div>
-        <div class="modal-body">
-          <div class="modal-inner">
-            <!-- authen form -->
-            <div class="auth-form">
-              <div class="out">
-                <i class="fas fa-times"></i>
-                <!-- <AiOutlineClose /> -->
-              </div>
-              <div class="auth-form__container">
-                <div class="sign-in type">
-                  <div class="auth-form__header">
-                    <h3 class="auth-form__heading">Đăng nhập</h3>
-                    <span class="auth-form__switch-btn">Đăng ký</span>
-                  </div>
-
-                  <div class="auth-form__content">
-                    <div class="auth-form__form">
-                      <div class="auth-form__group">
-                        <input
-                          type="text"
-                          class="auth-form__input"
-                          placeholder="Tên đăng nhập"
-                        />
-                      </div>
-                      <div class="auth-form__group">
-                        <input
-                          type="password"
-                          class="auth-form__input"
-                          placeholder="Mật khẩu"
-                        />
-                      </div>
-                      <div class="auth-form__miss">
-                        <a class="auth-form__miss-t">Quên mật khẩu?</a>
-                      </div>
-                    </div>
-
-                    <div class="auth-form__controls">
-                      <button class="btn">Đăng nhập</button>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="sign-up type">
-                  <div class="auth-form__header">
-                    <h3 class="auth-form__heading">Đăng ký</h3>
-                    <span class="auth-form__switch-btn">Đăng nhập</span>
-                  </div>
-
-                  <div class="auth-form__content">
-                    <div class="auth-form__form">
-                      <div class="auth-form__group">
-                        <input
-                          type="text"
-                          class="auth-form__input"
-                          placeholder="Tên đăng nhập"
-                        />
-                      </div>
-                      <div class="auth-form__group">
-                        <input
-                          type="password"
-                          class="auth-form__input"
-                          placeholder="Mật khẩu"
-                        />
-                      </div>
-                      <div class="auth-form__group">
-                        <input
-                          type="password"
-                          class="auth-form__input"
-                          placeholder="Nhập lại mật khẩu"
-                        />
-                      </div>
-                    </div>
-
-                    <div class="auth-form__aside">
-                      <p class="auth-form__policy-text">
-                        Bằng cách đăng ký, bạn đồng ý với
-                        <a href="" class="auth-form__policy-link">
-                          Điều khoản dịch vụ
-                        </a>
-                        &
-                        <a href="" class="auth-form__policy-link">
-                          Chính sách bảo mật của chúng tôi.
-                        </a>
-                      </p>
-                    </div>
-
-                    <div class="auth-form__controls">
-                      <button class="btn">Đăng ký</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="auth-form__socials">
-                <a href="" class="btn--with-icon facebook-icon">
-                  <!-- <FaFacebook class="social-icon" /> -->
-                  <i class="fab fa-facebook social-icon"></i>
-                  <div>Kết nối với Facebook</div>
-                </a>
-                <a href="" class="btn--with-icon">
-                  <!-- <FaGooglePlus class="social-icon" /> -->
-                  <i class="fab fa-google-plus social-icon"></i>
-                  <div>Kết nối với Google</div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script src="./main.js"></script>
-  </body>
+</body>
 </html>

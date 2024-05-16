@@ -10,7 +10,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <link rel="stylesheet" href="./style.css" />
+    <!-- <link rel="stylesheet" href="./style.css" /> -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,19 +18,36 @@
       rel="stylesheet"
     />
   </head>
+  <style>
+    <?php include 'style.css'; ?>
+  </style>
   <body>
     <!-- welcome -->
     <div class="welcome">
       <div class="welcome-container flex pl-8">
         <p class="welcome-left">Chào mừng bạn đến với nhà sách Tiến Thọ</p>
         <div class="welcome-log">
-          <a class="bg-red signup" href="#"> Đăng ký </a>
-          | <a class="login" href="#">Đăng nhập</a>
+          <?php 
+            $islogin = false;
+            $userName = "Hoa";
+            if (!$islogin) {
+              ?>
+                <a href="./page/login"> Đăng ký </a>
+              | <a href="./page/signup">Đăng nhập</a>
+              <?php
+            }
+            else {
+              echo "
+                <a>Xin chào: $userName</a>
+              | <a>Đăng xuất</a>
+              ";
+            } 
+          ?>
         </div>
-        <div class="welcome-login hide">
+        <!-- <div class="welcome-login hide">
           <a href="">Xin chào: User</a>
           | <a href="./index.php">Đăng xuất</a>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -1092,122 +1109,8 @@
       </div>
     </div>
 
-    <!-- modal -->
-    <!-- sign in -->
-    <div class="form-wrapper hide">
-      <div class="modal">
-        <div class="modal-overlay"></div>
-        <div class="modal-body">
-          <div class="modal-inner">
-            <!-- authen form -->
-            <div class="auth-form">
-              <div class="out">
-                <i class="fas fa-times"></i>
-                <!-- <AiOutlineClose /> -->
-              </div>
-              <div class="auth-form__container">
-                <div class="sign-in type">
-                  <div class="auth-form__header">
-                    <h3 class="auth-form__heading">Đăng nhập</h3>
-                    <span class="auth-form__switch-btn">Đăng ký</span>
-                  </div>
+    
 
-                  <div class="auth-form__content">
-                    <div class="auth-form__form">
-                      <div class="auth-form__group">
-                        <input
-                          type="text"
-                          class="auth-form__input"
-                          placeholder="Tên đăng nhập"
-                        />
-                      </div>
-                      <div class="auth-form__group">
-                        <input
-                          type="password"
-                          class="auth-form__input"
-                          placeholder="Mật khẩu"
-                        />
-                      </div>
-                      <div class="auth-form__miss">
-                        <a class="auth-form__miss-t">Quên mật khẩu?</a>
-                      </div>
-                    </div>
-
-                    <div class="auth-form__controls">
-                      <button class="btn">Đăng nhập</button>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="sign-up type">
-                  <div class="auth-form__header">
-                    <h3 class="auth-form__heading">Đăng ký</h3>
-                    <span class="auth-form__switch-btn">Đăng nhập</span>
-                  </div>
-
-                  <div class="auth-form__content">
-                    <div class="auth-form__form">
-                      <div class="auth-form__group">
-                        <input
-                          type="text"
-                          class="auth-form__input"
-                          placeholder="Tên đăng nhập"
-                        />
-                      </div>
-                      <div class="auth-form__group">
-                        <input
-                          type="password"
-                          class="auth-form__input"
-                          placeholder="Mật khẩu"
-                        />
-                      </div>
-                      <div class="auth-form__group">
-                        <input
-                          type="password"
-                          class="auth-form__input"
-                          placeholder="Nhập lại mật khẩu"
-                        />
-                      </div>
-                    </div>
-
-                    <div class="auth-form__aside">
-                      <p class="auth-form__policy-text">
-                        Bằng cách đăng ký, bạn đồng ý với
-                        <a href="" class="auth-form__policy-link">
-                          Điều khoản dịch vụ
-                        </a>
-                        &
-                        <a href="" class="auth-form__policy-link">
-                          Chính sách bảo mật của chúng tôi.
-                        </a>
-                      </p>
-                    </div>
-
-                    <div class="auth-form__controls">
-                      <button class="btn">Đăng ký</button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="auth-form__socials">
-                <a href="" class="btn--with-icon facebook-icon">
-                  <!-- <FaFacebook class="social-icon" /> -->
-                  <i class="fab fa-facebook social-icon"></i>
-                  <div>Kết nối với Facebook</div>
-                </a>
-                <a href="" class="btn--with-icon">
-                  <!-- <FaGooglePlus class="social-icon" /> -->
-                  <i class="fab fa-google-plus social-icon"></i>
-                  <div>Kết nối với Google</div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script src="./main.js"></script>
+    <script type="text/javascript" src="main.js"></script>
   </body>
 </html>

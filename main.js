@@ -1,5 +1,3 @@
-const login = document.querySelector(".welcome-login");
-const log = document.querySelector(".welcome-log");
 
 const formWrapper = document.querySelector(".form-wrapper");
 const signupButton = document.querySelector(".signup");
@@ -13,11 +11,6 @@ const searchBtn = document.querySelector(".search-btn");
 let nextForm = "";
 let searchInput = [];
 
-const isSignIn = true;
-if (isSignIn) {
-  login.classList.remove("hide");
-  log.classList.add("hide");
-}
 
 const toggleShow = (el, status) => {
   el.style.display = status;

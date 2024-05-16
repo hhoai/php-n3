@@ -10,7 +10,7 @@ if (isSignIn) {
   log.classList.add("hide");
 }
 
-const isEmptyCart = true;
+const isEmptyCart = false;
 if (isEmptyCart) {
   emptyCart.classList.add("hide");
   cart.classList.remove("hide");
