@@ -280,8 +280,6 @@
       gap: 5px;
       font-weight: 300;
       font-size: 14px;
-      .header-link {
-      }
       .link {
         color: #eb2c2c;
         &:hover {
@@ -290,28 +288,7 @@
       }
     }
   }
-  .empty-cart {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    margin-bottom: 40px;
-    background: $color-white;
-    .empty-text {
-      font-weight: 300;
-    }
-    .red {
-      padding: 10px 0 30px;
-      // color: #ff0000;
-      font-size: 20px;
-      animation: shake 1s;
-      animation-iteration-count: infinite;
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-  }
+
   .cart-container {
     background-color: $color-white;
     margin-bottom: 40px;
@@ -319,111 +296,140 @@
       padding: 0px 15px;
       max-width: 1200px;
       margin: auto;
-      .cart-header {
-        font-size: 28px;
-        padding: 20px 0;
-        color: $color-hover-bg;
-        text-transform: uppercase;
-      }
-      .product,
-      th,
-      td {
-        border: 1px solid #000;
-        border-collapse: collapse;
-        padding: 5px;
-      }
-      .product {
-        width: 1200px;
-        text-align: center;
-        .product-name {
-          text-align: left;
-          .product-img {
-            height: 100px;
-            padding: 0px 10px;
-          }
+      .payment-container {
+        .cart-header {
+          font-size: 28px;
+          padding: 20px 0;
+          color: $color-hover-bg;
+          text-transform: uppercase;
         }
-        .quantity {
-          .quantity-ip {
-            padding: 5px;
-            width: 100%;
-          }
-        }
-        .setting {
-          font-size: 22px;
-          .tooltip {
-            position: relative;
-            display: inline-block;
-            .tooltiptext {
-              visibility: hidden;
-              width: 60px;
-              font-size: 16px;
-              background-color: #848383;
-              color: #fff;
-              text-align: center;
-              padding: 5px 0;
-              border-radius: 6px;
-
-              /* Position the tooltip text */
-              position: absolute;
-              z-index: 1;
-              bottom: 125%;
-              left: 40px;
-              margin-left: -60px;
-
-              /* Fade in tooltip */
-              opacity: 0;
-              transition: opacity 0.3s;
-
-              &::after {
-                content: "";
-                position: absolute;
-                top: 100%;
-                left: 50%;
-                margin-left: -5px;
-                border-width: 5px;
-                border-style: solid;
-                border-color: #848383 transparent transparent transparent;
+        .payment-content {
+          display: flex;
+          justify-content: space-between;
+          .customer {
+            width: 60%;
+            .customer-header {
+              margin-bottom: 10px;
+              text-transform: uppercase;
+              color: $color-primary;
+              font-size: 20px;
+            }
+            .customer-content {
+              font-size: 18px;
+              .lable {
+                padding: 10px 0 5px;
+                font-weight: 500;
+              }
+              .ip-inf {
+                width: 80%;
+                padding: 5px;
+              }
+              .payment-method {
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                .output {
+                  padding: 0px 5px;
+                }
               }
             }
-            &:hover .tooltiptext {
-              visibility: visible;
-              opacity: 1;
+          }
+          .product-information {
+            .product-header {
+              margin-bottom: 20px;
+              text-transform: uppercase;
+              color: $color-primary;
+              font-size: 20px;
+            }
+            .product,
+            th,
+            td {
+              border: 1px solid #000;
+              border-collapse: collapse;
+              padding: 5px;
+            }
+            .product {
+              text-align: center;
+              .product-name {
+                text-align: left;
+                border-right: none;
+                .product-img {
+                  height: 100px;
+                }
+              }
+              .name {
+                border-left: none;
+                text-align: left;
+              }
+
+              .setting {
+                font-size: 22px;
+                .delete {
+                  color: #ff0000;
+                  cursor: pointer;
+                  padding-right: 5px;
+                }
+                .edit {
+                  color: #18a018;
+                  cursor: pointer;
+                }
+              }
+              .total-text {
+                text-align: right;
+              }
+              .total-number {
+                text-align: right;
+                .tong {
+                  border: none;
+                }
+              }
             }
           }
-          .delete {
-            color: #ff0000;
-            cursor: pointer;
-            padding-right: 5px;
-          }
-          .edit {
-            color: #18a018;
-            cursor: pointer;
-          }
         }
-        .total-text {
-          text-align: right;
+        &.hide {
+          display: none;
         }
-        .total-number {
+        .payment {
+          margin: 25px 0px 40px 0px;
           text-align: right;
-          .tong {
-            border: none;
+          .payment-btn {
+            font-size: 20px;
+            padding: 10px 25px;
+            border: 1px solid $color-primary;
+            border-radius: 8px;
+            background-color: $color-primary;
+            color: $color-white;
           }
         }
       }
-      .payment {
-        margin: 25px 0px 40px 0px;
-        text-align: right;
-        .payment-btn {
+      .successful {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 30px;
+        .icon {
+          width: 100px;
+        }
+        .success {
+          color: #21c179;
+          font-size: 24px;
+        }
+        .home {
+          font-size: 20px;
           padding: 10px 25px;
-          border: 1px solid $color-primary;
+          border: 1px solid #21c179;
           border-radius: 8px;
-          background-color: $color-primary;
+          background-color: #12ba6e;
           color: $color-white;
+          &:hover {
+            background-color: #21c179;
+          }
+        }
+        &.hide {
+          display: none;
         }
       }
-    }
-    &.hide {
-      display: none;
     }
   }
 }

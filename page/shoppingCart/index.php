@@ -131,7 +131,7 @@
     <div class="cart">
       <div class="header">
         <div class="link-a">
-          <a href="../index.html" class="header-link link">Trang chủ </a>/
+          <a href="../../index.html" class="header-link link">Trang chủ </a>/
           <p class="header-link">Giỏ hàng</p>
         </div>
       </div>
@@ -179,12 +179,14 @@
                       256000 VND
                     </td>
                     <td class="setting">
-                      <span class="nav-items delete">
+                      <div class="tooltip delete">
                         <i class="fas fa-trash-alt"></i>
-                      </span>
-                      <span class="nav-items edit">
+                        <span class="tooltiptext">Xóa</span>
+                      </div>
+                      <div class="tooltip edit">
                         <i class="fas fa-pen"></i>
-                      </span>
+                        <span class="tooltiptext">Lưu số lượng</span>
+                      </div>
                     </td>
                   </tr>
                   <tr>
@@ -203,12 +205,14 @@
                       15000 VND
                     </td>
                     <td class="setting">
-                      <span class="nav-items delete">
+                    <div class="tooltip delete">
                         <i class="fas fa-trash-alt"></i>
-                      </span>
-                      <span class="nav-items edit">
+                        <span class="tooltiptext">Xóa</span>
+                      </div>
+                      <div class="tooltip edit">
                         <i class="fas fa-pen"></i>
-                      </span>
+                        <span class="tooltiptext">Lưu số lượng</span>
+                      </div>
                     </td>
                   </tr>
                   <tr>
