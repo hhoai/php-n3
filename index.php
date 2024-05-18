@@ -22,6 +22,7 @@
     <?php include 'style.css'; ?>
   </style>
   <body>
+    
     <!-- welcome -->
     <div class="welcome">
       <div class="welcome-container flex pl-8">
@@ -85,7 +86,7 @@
         </div> -->
       </div>
     </div>
-    <div class="search-suggest"></div>
+    <!-- <div class="search-suggest"></div> -->
 
     <!-- navigation -->
     <div class="nav-header">

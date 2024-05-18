@@ -22,109 +22,12 @@
     <?php include 'login.css'; ?>
   </style>
 <body>
-    <!-- welcome -->
-    <div class="welcome">
-      <div class="welcome-container flex pl-8">
-        <p class="welcome-left">Chào mừng bạn đến với nhà sách Tiến Thọ</p>
-        <div class="welcome-log">
-          <?php 
-            $islogin = false;
-            $userName = "Hoa";
-            if (!$islogin) {
-              ?>
-                <a href="./index.php"> Đăng ký </a>
-              | <a href="../signup">Đăng nhập</a>
-              <?php
-            }
-            else {
-              echo "
-                <a>Xin chào: $userName</a>
-              | <a>Đăng xuất</a>
-              ";
-            } 
-          ?>
-        </div>
-      </div>
-    </div>
+  <!-- header -->
+  <?php require("../../layout/header/index.php");?>
 
-    <!-- toolbar -->
-    <div class="header-container">
-      <div>
-        <img class="logo" src="../../img/logo.png" alt="logo" />
-      </div>
-
-      <div class="search">
-        <input type="search" class="ip-search" placeholder="Tìm kiếm... " />
-        <!-- <AiOutlineSearch class="fa-search" /> -->
-        <button class="search-btn fas fa-search"></button>
-      </div>
-
-      <div class="hotline">
-        <img class="img-hotline" src="../../img/hotline.webp" alt="hotline" />
-        <div class="hotline-phoneNumber">
-          <p class="hotline-text">Hotline:</p>
-          <a class="hotline-tel" href="tel:0987654321">0987654321</a>
-        </div>
-      </div>
-
-      <div class="shopping-cart">
-        <a class="shopping-cart-container" href="./page/shoppingCart/index.php">
-          <!-- <FaShoppingCart class="fa-shopping-cart" /> -->
-          <i class="fas fa-shopping-cart"></i>
-          Giỏ hàng
-        </a>
-      </div>
-    </div>
-
-    <!-- navigation -->
-    <div class="nav-header">
-      <div class="nav-container">
-        <li class="nav-left">
-          <a href="../collections/" class="nav-left-container">
-            <p class="fs-16">
-              <i class="fas fa-bars icon menu-icon"></i>
-              <!-- <HiMenu class="icon menu-icon" /> -->
-              Danh mục sản phẩm
-              <i class="fas fa-chevron-down icon down-icon"></i>
-              <!-- <HiChevronDown class="icon down-icon" /> -->
-            </p>
-          </a>
-        </li>
-        <li class="nav-right">
-          <a href="../../index.php" class="nav-right-container">
-            <p class="nav-text">Trang chủ</p>
-          </a>
-        </li>
-        <li class="nav-right">
-          <div href="#" class="nav-right-container">
-            <div class="nav-text">
-              <div>Giới thiệu</div>
-              <i class="fas fa-chevron-down icon down-icon"></i>
-            </div>
-            <div class="sub-nav">
-              <div class="introduce">
-                <a href="../introduction/" class="introduce-item">
-                  <div class="sub-nav-content">Giới thiệu chung</div>
-                </a>
-              </div>
-              <div class="introduce">
-                <a href="../saleActivity" class="introduce-item">
-                  <div class="sub-nav-content">Hoạt động kinh doanh</div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </li>
-        <li class="nav-right">
-          <a href="../contact" class="nav-right-container">
-            <p class="nav-text">Liên hệ</p>
-          </a>
-        </li>
-      </div>
-    </div>
-    <!-- modal -->
-    <!-- sign in -->
-    <div class="modal">
+  <!-- modal -->
+  <!-- sign in -->
+  <div class="modal">
     <div class="form__container">
       <h2 class="form-header">Đăng ký tài khoản</h2>
       <div class="auth-form__socials">
@@ -143,20 +46,40 @@
         <hr class="or-hr"/>
         <span class="or-text">hoặc</span>
       </div>
+      <?php 
+        error_reporting(E_ERROR | E_PARSE);
+        if(isset($_POST['logins'])) {
+          $username = $_POST['username'];
+          $password = $_POST['password'];
+          $check_password = $_POST['check_password'];
+          if(empty($username)) {
+            $error_username = "Vui long dien ten dang nhap!";
+          }
+        }
+      ?>
       <form class="auth-form__content">
         <div class="auth-form__form">
           <div class="auth-form__group">
           <p class="lable">Tên đăng nhập</p>  
           <input
               type="text"
+              name="username"
+              value="<?php echo $username;?>"
               class="auth-form__input"
               placeholder="Tên đăng nhập"
-            />
+          />
+          <!-- <input
+              type="text"
+              value="<?php echo $error_username;?>"
+              class="auth-form__input"
+          /> -->
           </div>
           <div class="auth-form__group">
           <p class="lable">Mật khẩu</p>  
           <input
               type="password"
+              name="password"
+              value="<?php echo $password;?>"
               class="auth-form__input"
               placeholder="Mật khẩu"
             />
@@ -165,6 +88,8 @@
           <p class="lable">Nhập lại mật khẩu</p>  
           <input
               type="password"
+              name="check_password"
+              value="<?php echo $check_password;?>"
               class="auth-form__input"
               placeholder="Nhập lại mật khẩu"
             />
@@ -185,91 +110,13 @@
         </div>
 
         <div class="auth-form__controls">
-          <button class="btn">Đăng ký</button>
+          <input type="submit" name="login" class="btn" value="Đăng ký"></input>
         </div>
       </form>
     </div>
-
-    </div>
-    <!-- footer -->
-    <div class="main-footer">
-      <div class="footer">
-        <div class="footer-header">
-          <div class="footer-heading">
-            <div class="footer-heading-container">
-              <div class="footer-heading-a">
-                <!-- <MdCall class="icon" /> -->
-                <i class="fas fa-phone-alt icon"></i>
-                <div class="footer-heading-h">Đặt hàng trực tuyến</div>
-              </div>
-              <div class="footer-heading-c">SĐT: 0987654321</div>
-            </div>
-          </div>
-          <div class="footer-heading">
-            <div class="footer-heading-container fl-l">
-              <div class="footer-heading-a">
-                <!-- <GoClock class="icon" /> -->
-                <i class="far fa-clock icon"></i>
-                <div class="footer-heading-h">Làm việc các ngày trong tuần</div>
-              </div>
-              <div class="footer-heading-c">Thứ 2 - Chủ Nhật</div>
-              <div class="footer-heading-c">7h30 đến 22h30</div>
-            </div>
-          </div>
-        </div>
-        <div class="footer-container">
-          <div class="footer-container-left">
-            <div class="container">
-              <div class="container-h">Sản phẩm</div>
-              <a href="../index.html" class="container-items">Trang chủ</a>
-              <a href="../introduction/" class="container-items">Giới thiệu</a>
-              <a href="../contact/" class="container-items">Liên hệ</a>
-            </div>
-            <div class="container">
-              <div class="container-h">Hỗ trợ</div>
-              <a href="../introduction/" class="container-items"
-                >Giới thiệu chung</a
-              >
-              <a href="../saleActivity/" class="container-items"
-                >Hoạt động kinh doanh</a
-              >
-            </div>
-
-            <div class="container">
-              <div class="container-h">Kết nối với chúng tôi</div>
-              <div class="container-items"></div>
-            </div>
-          </div>
-          <div class="footer-container-right">
-            <div class="phone-number">0987654321</div>
-            <div class="time">Thứ 2 - Chủ Nhật</div>
-            <div class="time">7h30 - 22h30</div>
-            <div class="address">
-              <FaMapMarkerAlt class="icon" />
-              697 Giải Phóng - Hoàng Mai - Hà Nội
-            </div>
-            <div class="socials-contact">
-              <div class="socials-items">
-                <i class="fab fa-facebook-f social-icon"></i>
-                <!-- <FaFacebookF class="social-icon" /> -->
-              </div>
-              <div class="socials-items">
-                <i class="fab fa-google-plus-g social-icon"></i>
-                <!-- <FaGooglePlusG class="social-icon" /> -->
-              </div>
-              <div class="socials-items">
-                <i class="fab fa-pinterest-p social-icon"></i>
-                <!-- <FaPinterest class="social-icon" /> -->
-              </div>
-              <a class="socials-items" href="./admin/">
-                <i class="fas fa-rss social-icon"></i>
-                <!-- <FaRss class="social-icon" /> -->
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
+  </div>
+  
+  <!-- footer -->
+  <?php require("../../layout/footer/index.php");?>
 </body>
 </html>
