@@ -48,51 +48,58 @@
       </div>
       <?php 
         error_reporting(E_ERROR | E_PARSE);
-        if(isset($_POST['logins'])) {
+        if(isset($_POST['login'])) {
           $username = $_POST['username'];
           $password = $_POST['password'];
           $check_password = $_POST['check_password'];
+          // $error="";
           if(empty($username)) {
-            $error_username = "Vui long dien ten dang nhap!";
+            $error_name = "* Vui lòng nhập đầy đủ thông tin!";
+          }
+          if(empty($password)) { 
+            $error_password = "* Vui lòng nhập mật khẩu!";
+          }
+          if(empty($check_password)) {
+            $error_check_password = "* Vui lòng nhập lại mật khẩu!";
+          } else if(strcmp($check_password,$password)) {
+            $error_check_password = "* Mật khẩu không khớp!";
           }
         }
       ?>
-      <form class="auth-form__content">
+      <form class="auth-form__content" method="post">
         <div class="auth-form__form">
           <div class="auth-form__group">
-          <p class="lable">Tên đăng nhập</p>  
-          <input
-              type="text"
-              name="username"
-              value="<?php echo $username;?>"
-              class="auth-form__input"
-              placeholder="Tên đăng nhập"
-          />
-          <!-- <input
-              type="text"
-              value="<?php echo $error_username;?>"
-              class="auth-form__input"
-          /> -->
+            <p class="lable">Tên đăng nhập</p>  
+            <input
+                type="text"
+                name="username"
+                value="<?php echo $username;?>"
+                class="auth-form__input"
+                placeholder="Tên đăng nhập"
+            />
+            <span class="error"><?php echo $error_name; ?></span>
+          </div>  
+          <div class="auth-form__group">
+            <p class="lable">Mật khẩu</p>  
+            <input
+                type="password"
+                name="password"
+                value="<?php echo $password;?>"
+                class="auth-form__input"
+                placeholder="Mật khẩu"
+            />
+            <span class="error"><?php echo $error_password; ?></span>
           </div>
           <div class="auth-form__group">
-          <p class="lable">Mật khẩu</p>  
-          <input
-              type="password"
-              name="password"
-              value="<?php echo $password;?>"
-              class="auth-form__input"
-              placeholder="Mật khẩu"
-            />
-          </div>
-          <div class="auth-form__group">
-          <p class="lable">Nhập lại mật khẩu</p>  
-          <input
-              type="password"
-              name="check_password"
-              value="<?php echo $check_password;?>"
-              class="auth-form__input"
-              placeholder="Nhập lại mật khẩu"
-            />
+            <p class="lable">Nhập lại mật khẩu</p>  
+            <input
+                type="password"
+                name="check_password"
+                value="<?php echo $check_password;?>"
+                class="auth-form__input"
+                placeholder="Nhập lại mật khẩu"
+              />
+            <span class="error"><?php echo $error_check_password; ?></span>
           </div>
         </div>
 
@@ -110,7 +117,7 @@
         </div>
 
         <div class="auth-form__controls">
-          <input type="submit" name="login" class="btn" value="Đăng ký"></input>
+          <input type="submit" name="login" class="btn" value="Đăng ký">
         </div>
       </form>
     </div>

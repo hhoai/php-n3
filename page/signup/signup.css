@@ -112,6 +112,9 @@ li {
 .modal .form__container .auth-form__content .auth-form__form .auth-form__group .auth-form__input:focus {
   outline: 2px solid #ce0021;
 }
+.modal .form__container .auth-form__content .auth-form__form .auth-form__group .error {
+  color: #ff0000;
+}
 .modal .form__container .auth-form__content .auth-form__form .auth-form__miss .auth-form__miss-t {
   float: right;
   color: #b7001d;

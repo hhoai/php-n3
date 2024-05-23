@@ -79,6 +79,7 @@
             padding: 10px 0;
           }
           .auth-form__input {
+            margin-bottom: 8px;
             background-color: #f3ecec;
             height: 50px;
             width: 100%;
@@ -91,6 +92,9 @@
             &:focus {
               outline: 2px solid $color-primary;
             }
+          }
+          .error {
+            color: #ff0000;
           }
         }
         .auth-form__miss {

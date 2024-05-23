@@ -1,3 +1,9 @@
+<?php 
+  session_start();
+  $username = "Hoa";
+  $_SESSION['username'] = $username;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,7 +36,6 @@
         <div class="welcome-log">
           <?php 
             $islogin = false;
-            $userName = "Hoa";
             if (!$islogin) {
               ?>
                 <a href="./page/login"> Đăng ký </a>
@@ -39,7 +44,7 @@
             }
             else {
               echo "
-                <a>Xin chào: $userName</a>
+                <a>Xin chào:".$_SESSION["username"]."</a>
               | <a>Đăng xuất</a>
               ";
             } 
