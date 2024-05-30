@@ -1,7 +1,7 @@
 <?php 
   session_start();
-  $username = "Hoa";
-  $_SESSION['username'] = $username;
+  // $_SESSION['username'];
+  $_SESSION['login'];
 ?>
 
 <!DOCTYPE html>
@@ -35,8 +35,8 @@
         <p class="welcome-left">Chào mừng bạn đến với nhà sách Tiến Thọ</p>
         <div class="welcome-log">
           <?php 
-            $islogin = false;
-            if (!$islogin) {
+            $login = $_SESSION['login'];
+            if (!$login) {
               ?>
                 <a href="./page/login"> Đăng ký </a>
               | <a href="./page/signup">Đăng nhập</a>
@@ -44,16 +44,12 @@
             }
             else {
               echo "
-                <a>Xin chào:".$_SESSION["username"]."</a>
-              | <a>Đăng xuất</a>
+                <a>Xin chào: ".$_SESSION["username"]."</a>
+              | <a href='./page/logout'>Đăng xuất</a>
               ";
             } 
           ?>
         </div>
-        <!-- <div class="welcome-login hide">
-          <a href="">Xin chào: User</a>
-          | <a href="./index.php">Đăng xuất</a>
-        </div> -->
       </div>
     </div>
 

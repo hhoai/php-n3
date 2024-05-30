@@ -1,3 +1,7 @@
+<?php 
+  // session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,19 +18,17 @@
       <div class="welcome-container flex pl-8">
         <p class="welcome-left">Chào mừng bạn đến với nhà sách Tiến Thọ</p>
         <div class="welcome-log">
-          <?php 
-            $islogin = false;
-            $userName = "Hoa";
-            if (!$islogin) {
+        <?php 
+            if (empty($_SESSION["login"])) {
               ?>
-                <a href="../login"> Đăng ký </a>
-              | <a href="../signup">Đăng nhập</a>
+                <a href="../page/login"> Đăng ký </a>
+              | <a href="../page/signup">Đăng nhập</a>
               <?php
             }
             else {
               echo "
-                <a>Xin chào: $userName</a>
-              | <a>Đăng xuất</a>
+                <a>Xin chào: ".$_SESSION["username"]."</a>
+              | <a href='../page/logout'>Đăng xuất</a>
               ";
             } 
           ?>
